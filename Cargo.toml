@@ -1,0 +1,21 @@
+[package]
+name = "macvtap"
+version = "0.1.0"
+authors = ["fengjian <fengjianxinghun@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies.cc]
+version = "1.0.52"
+
+[dependencies]
+libc = "0.2.69"
+
+
+
+[profile.release]
+opt-level = 'z'  # Optimize for size
+lto = true
+codegen-units = 1
+panic = 'abort'
