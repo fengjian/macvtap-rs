@@ -3,6 +3,9 @@ name = "macvtap"
 version = "0.1.0"
 authors = ["fengjian <fengjianxinghun@gmail.com>"]
 edition = "2018"
+license-file = "LICENSE"
+description = "macvtap/tap dev read/write"
+repository = "https://github.com/fengjian/macvtap-rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
