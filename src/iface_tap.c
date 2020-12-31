@@ -46,7 +46,8 @@ int up_iface(const char *name) {
 }
 
 
-int set_mtu(const char *name, unsigned int mtu) {
+int set_mtu(const char *name, unsigned int mtu) 
+{
 	struct ifreq req;
 	memset(&req, 0, sizeof req);
 	req.ifr_mtu = mtu;
@@ -184,7 +185,8 @@ int create_macvtap(const char *ifname, char return_name[IFNAMSIZ], unsigned int 
 }
 
 
-int create_tap(const char *name, char return_name[IFNAMSIZ], unsigned int mtu) {
+int create_tap(const char *name, char return_name[IFNAMSIZ], unsigned int mtu) 
+{
 	// https://raw.githubusercontent.com/torvalds/linux/master/Documentation/networking/tuntap.txt
 	int fd = open("/dev/net/tun", O_RDWR);
 	if (fd < 0) {
