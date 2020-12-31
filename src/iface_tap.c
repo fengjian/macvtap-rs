@@ -17,7 +17,8 @@
 #include <linux/ethtool.h>
 
 
-int up_iface(const char *name) {
+int up_iface(const char *name) 
+{
 	struct ifreq req;
 	memset(&req, 0, sizeof req);
 	req.ifr_flags = IFF_UP;
