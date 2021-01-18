@@ -41,16 +41,16 @@ impl Iface {
     /// use macvtap::{Iface, Mode};
     /// use std::{io::{Read, Write, Result}, vec};
     /// 
-    /// #sync read/write
+    /// // sync read/write
     /// let mut iface = Iface::new("tap0", Mode::MacvTap, 1500)?;
     /// let mut buf = vec![0;1504];
     /// buf.read(&mut buf);
     ///
-    /// # async read/write
-    ///  use smol::{Async};
+    /// // async read/write
+    /// use smol::{Async};
     ///  
-    ///  let async_iface = Async::new(iface)?;
-    ///  async_iface.read(&mut buf).await;
+    /// let async_iface = Async::new(iface)?;
+    /// async_iface.read(&mut buf).await;
     /// ```
     pub fn new(ifname: &str, mode: Mode, mtu: u32) -> Result<Self> {
         let fd = unsafe {
