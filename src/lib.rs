@@ -58,8 +58,8 @@ impl Iface {
             let iface_name = t.as_ptr();
             let mut device = vec![0i8; 256];
             match mode {
-                Mode::Tap => { create_tap(iface_name, device.as_mut_ptr(), mtu) },
-                Mode::MacvTap => { create_macvtap(iface_name, device.as_mut_ptr(), mtu) },
+                Mode::Tap => { create_tap(iface_name as *const _ as *const c_char, device.as_mut_ptr() as *mut _ as *mut c_char, mtu) },
+                Mode::MacvTap => { create_macvtap(iface_name as *const _ as *const c_char, device.as_mut_ptr() as *mut _ as *mut c_char, mtu) },
                 _ => { -1 }
             }
         };
